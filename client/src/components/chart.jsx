@@ -1,11 +1,12 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import moment from "moment";
 
 class Chart extends React.Component {
   render() {
     let labels = this.props.chartData.map(item => {
       console.log(item);
-      return item[0];
+      return moment(item[0]).format("dddd, MMMM Do YYYY"); 
     });
 
     let data = this.props.chartData.map(item => {
@@ -25,8 +26,8 @@ class Chart extends React.Component {
           borderDash: [],
           borderDashOffset: 0.0,
           borderJoinStyle: "miter",
-          pointBorderColor: "red",
-          pointBackgroundColor: "yellow",
+          pointBorderColor: "blue",
+          pointBackgroundColor: "white",
           pointBorderWidth: 2,
           pointHoverRadius: 5,
           pointHoverBackgroundColor: "rgba(75,192,192,1)",
